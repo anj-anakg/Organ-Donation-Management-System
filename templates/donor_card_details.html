@@ -1,0 +1,80 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'donar_details.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <title> Donor Details</title>
+</head>
+<body>
+<!--navbar-->
+<nav class="navbar">
+    <ul>
+        <li><a class="btn btn-outline" href="{% url 'home' %}">Home</a></li>
+        <li><a>About Us </a></li>
+        <li><a href="{% url 'contact' %}">Contact Us</a></li>
+        <li><a href="{% url 'faq' %}">FAQ's</a></li>
+        <li class="site-name"><i class="fas fa-heart-pulse"></i> Jeevana</li>
+        {% if user.is_authenticated %}
+        <li><a class="btn btn-outline" href="{% url 'logout' %}">LogOut</a></li>
+        {% else %}
+        <li><a class="btn btn-outline" href="{% url 'login' %}">Login</a></li>
+        <li><a class="btn btn-outline" href="{% url 'register' %}">Register</a></li>
+        {% endif %}
+    </ul>
+</nav>
+
+<!-- Donor Card Details Form -->
+<form method="get" action="">
+    {% csrf_token %}
+    <div>
+        <h2>Hello, {{ user }}</h2>
+        <h3>Personal Details:</h3>
+
+        {% if donor_list %}
+            {% for donor in donor_list %}
+                <div class="donor-details">
+                    <h5>Name: {{ donor.name }}</h5>
+                    <h5>Age: {{ donor.age }}</h5>
+                    <h5>Gender: {{ donor.gender }}</h5>
+                    <h5>Blood Group: {{ donor.bloodgroup }}</h5>
+                    <h5>Organ Willing to Donate: {{ donor.organ }}</h5>
+                    <h5>Phone Number: {{ donor.phone_number }}</h5>
+                    <h5>Place: {{ donor.place }}</h5>
+                    {% if donor.status %}
+                        <h5>Status: Available</h5>
+                    {% else %}
+                        <h5>Status: Not Available</h5>
+                    {% endif %}
+                    <hr>
+                    <a href="{% url 'donor_card_update' pk=donor.pk %}">Update</a>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>No donor details available for the logged-in user. <a href="{% url 'donor_card' %}">Register Here</a></p>
+        {% endif %}
+    </div>
+    <br>
+    <a href="{% url 'main' %}">Go Back</a>
+</form>
+
+
+<!--footer-->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-left">
+                <p>&copy; 2023 Jeevana. All rights reserved.</p>
+            </div>
+            <div class="footer-right">
+                <p>Email: info@jeevana.com</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+</body>
+</html>

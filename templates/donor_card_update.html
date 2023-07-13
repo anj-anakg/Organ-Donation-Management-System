@@ -1,0 +1,86 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'donor_card_update.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <title>Donor Update Details</title>
+</head>
+<body>
+<!-- Navbar -->
+<nav class="navbar">
+    <ul>
+        <li><a class="btn btn-outline" href="{% url 'home' %}">Home</a></li>
+        <li><a>About Us</a></li>
+        <li><a href="{% url 'contact' %}">Contact Us</a></li>
+        <li><a href="{% url 'faq' %}">FAQ's</a></li>
+        <li class="site-name"><i class="fas fa-heart-pulse"></i> Jeevana</li>
+        {% if user.is_authenticated %}
+            <li><a class="btn btn-outline" href="{% url 'logout' %}">LogOut</a></li>
+        {% else %}
+            <li><a class="btn btn-outline" href="{% url 'login' %}">Login</a></li>
+            <li><a class="btn btn-outline" href="{% url 'register' %}">Register</a></li>
+        {% endif %}
+    </ul>
+</nav>
+
+<!-- Update Form -->
+<div class="form-container">
+    <form method="post">
+        {% csrf_token %}
+        <h2>Donor Update</h2>
+        <label for="id_username">Username:</label>
+        <input type="text" id="id_username" name="username" value="{{ form.instance.user.username }}" readonly>
+        <label for="id_name">Name:</label>
+        <input type="text" id="id_name" name="name" value="{{ form.instance.name }}">
+        <label for="id_age">Age:</label>
+        <input type="number" id="id_age" name="age" value="{{ form.instance.age }}">
+        <label for="id_gender">Gender:</label>
+        <input type="text" id="id_gender" name="gender" value="{{ form.instance.gender }}">
+        <label for="id_bloodgroup">Blood Group:</label>
+        <select id="id_bloodgroup" name="bloodgroup">
+            <option value="" {% if form.instance.bloodgroup == "" %}selected{% endif %}>Choose...</option>
+            <option value="A+" {% if form.instance.bloodgroup == "A+" %}selected{% endif %}>A+</option>
+            <option value="A-" {% if form.instance.bloodgroup == "A-" %}selected{% endif %}>A-</option>
+            <option value="B+" {% if form.instance.bloodgroup == "B+" %}selected{% endif %}>B+</option>
+            <option value="B-" {% if form.instance.bloodgroup == "B-" %}selected{% endif %}>B-</option>
+            <option value="AB+" {% if form.instance.bloodgroup == "AB+" %}selected{% endif %}>AB+</option>
+            <option value="AB-" {% if form.instance.bloodgroup == "AB-" %}selected{% endif %}>AB-</option>
+            <option value="O+" {% if form.instance.bloodgroup == "O+" %}selected{% endif %}>O+</option>
+            <option value="O-" {% if form.instance.bloodgroup == "O-" %}selected{% endif %}>O-</option>
+        </select>
+        <label for="id_organ">Organ Willing to Donate:</label>
+        <select id="id_organ" name="organ">
+            <option value="" {% if form.instance.organ == "" %}selected{% endif %}>Choose...</option>
+            <option value="Heart" {% if form.instance.organ == "Heart" %}selected{% endif %}>Heart</option>
+            <option value="Liver" {% if form.instance.organ == "Liver" %}selected{% endif %}>Liver</option>
+            <option value="Kidney" {% if form.instance.organ == "Kidney" %}selected{% endif %}>Kidney</option>
+            <option value="Lung" {% if form.instance.organ == "Lung" %}selected{% endif %}>Lung</option>
+            <option value="Pancreas" {% if form.instance.organ == "Pancreas" %}selected{% endif %}>Pancreas</option>
+        </select>
+        <label for="id_phone_number">Phone Number:</label>
+        <input type="text" id="id_phone_number" name="phone_number" value="{{ form.instance.phone_number }}">
+        <label for="id_place">Place:</label>
+        <input type="text" id="id_place" name="place" value="{{ form.instance.place }}">
+        <button type="submit" value="submit" class="btn btn-primary">Submit</button>
+        <a href="{% url 'donor_card_details' %}">Go Back</a>
+    </form>
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-left">
+                <p>&copy; 2023 Jeevana. All rights reserved.</p>
+            </div>
+            <div class="footer-right">
+                <p>Email: info@jeevana.com</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

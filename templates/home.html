@@ -1,0 +1,90 @@
+{% load static %}
+<html>
+<head>
+    <title>Organ Donation Website</title>
+    <link rel="stylesheet" href="{% static 'home.css' %}">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+          integrity="sha384-fmA1LSlSplo+RqmrnqPP7cFx1yi2wUHXE+HZPHLDOa9weRU8KvDLMXJ8v0yiL4pj" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"
+            integrity="sha384-FMkTuBHIu0BvHaFZ23IZaUWn+8rVNPjX7b/QFKbDi6BjwAdG+LbKqOwqLe6T7Ujl"
+            crossorigin="anonymous"></script>
+
+
+</head>
+<body>
+<!--navbar-->
+<nav class="navbar">
+    <ul>
+        <li><a class="btn btn-outline" href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'about' %}">About Us </a></li>
+        <li><a href="{% url 'contact' %}">Contact Us</a></li>
+        <li><a href="{% url 'faq' %}">FAQ's</a></li>
+        <li class="site-name"><i class="fas fa-heart-pulse"></i> Jeevana</li>
+        {% if user.is_authenticated %}
+        <li><a class="btn btn-outline" href="{% url 'logout' %}">LogOut</a></li>
+        {% else %}
+        <li><a class="btn btn-outline" href="{% url 'login' %}">Login</a></li>
+        <li><a class="btn btn-outline" href="{% url 'register' %}">Register</a></li>
+        {% endif %}
+    </ul>
+</nav>
+<!--header-->
+<div class="header">
+    <img src="{% static 'organ-hero.jpg' %}" alt="Header Image">
+</div>
+<h2>WELCOME TO JEEVANA ORGAN DONATION</h2>
+<div class="para">
+    <p>
+        Organ donation is a noble act of transplanting healthy organs from a donor to a patient receiver. Human body
+        organs and tissues that function properly are collected and transplanted into patients’ bodies to save their
+        lives.
+        In most cases, organ donations are performed after the donor’s death. But some organs can be donated even when
+        the donors are alive.The kidney, eyes, liver, heart, skin tissues, small intestines, and lungs are some of the
+        organs that people commonly donate. Participation in organ donation is a great form of charity and social
+        service. It marks the contribution of individuals after death.
+        We all should pledge to donate our organs to save lives.<a href="{% url 'faq' %}">Know More</a>
+    </p>
+
+</div>
+
+<!-- Useful Links Section -->
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-md-4">
+            <h3>Useful Links</h3>
+            <ul>
+<!--                <li><a href="{% url 'approved_hospitals' %}">Approved Hospitals For Organ Transplant</a></li>-->
+                <li><a href="{% url 'faq' %}">Organ Donation Awareness</a></li>
+<!--                <li><a href="#">Body Donation Directory</a></li>-->
+            </ul>
+        </div>
+        <div class="col-md-8">
+            <h3 style="color:red;">By Pledging Your Organs You Can Save Upto 8 Lives</h3>
+            <h3>Apply For Donor Card</h3>
+            <br>
+            <a href="{% url 'register'  %}" type="button" class="donor-button" >Register Here..</a>
+        </div>
+    </div>
+</div>
+
+
+
+<!--footer-->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-left">
+                <p>&copy; 2023 Jeevana. All rights reserved.</p>
+            </div>
+            <div class="footer-right">
+                <p>Email: info@jeevana.com</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+</body>
+</html>

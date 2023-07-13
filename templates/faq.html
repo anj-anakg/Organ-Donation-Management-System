@@ -1,0 +1,137 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'faq.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Frequently Asked Questions</title>
+</head>
+<body>
+<!--navbar-->
+<nav class="navbar">
+    <ul>
+        <li><a class="btn btn-outline" href="{% url 'home' %}">Home</a></li>
+        <li><a>About Us </a></li>
+        <li><a href="{% url 'contact' %}">Contact Us</a></li>
+        <li><a href="{% url 'faq' %}">FAQ's</a></li>
+        <li class="site-name"><i class="fas fa-heart-pulse"></i> Jeevana</li>
+        {% if user.is_authenticated %}
+        <li><a class="btn btn-outline" href="{% url 'logout' %}">LogOut</a></li>
+        {% else %}
+        <li><a class="btn btn-outline" href="{% url 'login' %}">Login</a></li>
+        <li><a class="btn btn-outline" href="{% url 'register' %}">Register</a></li>
+        {% endif %}
+    </ul>
+</nav>
+
+<div class="container">
+    <h1>Frequently Asked Questions</h1>
+    <div class="details">
+        <details>
+            <summary>What organs can be donated?</summary>
+            <div>
+                Life-saving organs such as a heart, kidney, pancreas, lungs, liver and intestines can be donated. Tissues, such as bones, ligaments and tendons, are often needed, so they can also be donated.
+                Corneas, heart valves and skin may also be donated. For tissues, a bank can be created.
+            </div>
+        </details>
+    </div>
+    <div class="details">
+        <details>
+            <summary>How can I donate organs?</summary>
+            <div>
+                You can pledge to donate your organs in your lifetime and also inform your family members about the decision of organ donation.
+                You can also, in writing state your wish to donate your organs.
+            </div>
+        </details>
+    </div>
+    <div class="details">
+        <details>
+            <summary>Why should I become an Organ Donor?</summary>
+            <div>
+                In India, there are over 150,000 people currently in need of kidney transplants. The wait-list for patients with heart and liver failure is growing all the time as well.
+                And each year, thousands of people die while waiting for a transplant, because no suitable donor can be found for them. The need for organ donors has never been greater. It can be hard to think about what's going to happen to your body after you die, let alone donating your organs and tissue.
+                But being an organ donor is a generous and worthwhile decision that can be a lifesaver. All people can be considered as being potential organ and tissue donors after death. However, the presence of active cancer, active HIV, active infection (for example, sepsis) or Intravenous (IV) drug use would absolutely rule out donation. Patients who have Hepatitis C may still donate organs to a patient who also has Hepatitis C.
+                The same is true for Hepatitis B — but this happens in very rare cases. Most cancer patients may donate corneas.
+            </div>
+        </details>
+    </div>
+    <div class="details">
+        <details>
+            <summary>How does Organ Donation help patients with organ failure?</summary>
+            <div>
+                For organ recipients, a transplant often means a second chance at life. Vital organs such as the heart, pancreas, liver, kidneys and lungs can be transplanted to those whose organs are failing. It allows many recipients to return to a normal lifestyle.
+                For others, a cornea or tissue transplant means the ability to see again or the recovery of mobility and freedom from pain.
+            </div>
+        </details>
+    </div>
+    <div class="details">
+        <details>
+            <summary>Can I sell my organs?</summary>
+            <div>
+                No. The Transplantation of Human Organs Act makes it ILLEGAL to buy or sell human organs and tissues.
+                Violators are subject to fines and imprisonment.
+            </div>
+        </details>
+    </div>
+    <div class="details">
+        <details>
+            <summary>How long after death can organs be donated?</summary>
+            <div>
+                These are the times for which different organs can stay out of the human body:
+                Lung - 4 to 6 hours,
+                Heart - 4 to 6 hours,
+                Liver - 24 hours,
+                Pancreas - 24 hours,
+                Kidney - 72 hours,
+                Cornea - 14days,
+                Bones - 5 years,
+                Skin - 5 years,
+                Heart Valves - 10 years,
+            </div>
+        </details>
+    </div>
+    <div class="details">
+        <details>
+            <summary>What is the central authority for organ donation in India?</summary>
+            <div>
+                NOTTO (National Organ & Tissue Transplant Organisation) is the central authority for organ donation in India.
+            </div>
+        </details>
+    </div>
+    <div class="details">
+        <details>
+            <summary>Whose consent is taken after my death to get my organs donated?</summary>
+            <div>
+                Your next of kin or family is asked to give consent to donate your organs. This is a norm in India.
+            </div>
+        </details>
+    </div>
+   <div class="details">
+        <details>
+            <summary>When is a patient declared dead?</summary>
+            <div>
+                A person may be declared dead due to Cardiac Arrest or due to Brain Death.
+            </div>
+        </details>
+    </div>
+</div>
+
+<a href="{% url 'home' %}" style="display: block; text-align: center;">GO Back</a>
+
+<!--footer-->
+<div class="footer-container">
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-left">
+        <p>&copy; 2023 Jeevana. All rights reserved.</p>
+      </div>
+      <div class="footer-right">
+        <p>Email: info@jeevana.com</p>
+      </div>
+    </div>
+  </footer>
+</div>
+
+
+</body>
+</html>

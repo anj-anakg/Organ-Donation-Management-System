@@ -1,0 +1,114 @@
+.navbar {
+  background-color: lightblue;
+}
+
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex; /* Added to create a horizontal layout */
+}
+
+.navbar ul li {
+  display: inline;
+  margin-right: 10px; /* Added to create spacing between the links */
+}
+
+.navbar ul li:last-child {
+  margin-right: 0; /* Remove margin from the last li element */
+}
+
+.navbar ul li a {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: black;
+}
+
+.navbar ul li a:hover {
+  background-color: lightgray;
+}
+
+.site-name {
+    color: black; /* Change the text color */
+    font-weight: bold; /* Apply bold font weight */
+    margin:auto; /* Center the site name horizontally */
+    text-align: center; /* Center the text within the site name */
+    font-size: 20px; /* Adjust the font size */
+    flex:1;
+    font-family:"Georgia", serif; /* Apply a different font style */
+}
+.site-name i {
+  margin-right: 5px; /* Add spacing between the icon and text */
+}
+
+
+.container {
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+}
+
+.details {
+  margin-bottom: 20px;
+}
+
+.details summary {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.details summary:focus {
+  outline: none;
+}
+
+.details div {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: lightblue;
+  border-radius: 10px;
+}
+
+.details:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+/* footer */
+.footer-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.footer {
+  background-color: lightblue;
+  padding: 10px;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+.footer-content {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.footer-content p {
+  margin: 0;
+}
+
+.footer-left,
+.footer-right {
+  flex-basis: 50%;
+  text-align: center;
+}
+

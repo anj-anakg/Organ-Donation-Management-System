@@ -1,0 +1,123 @@
+.navbar {
+  background-color: lightblue;
+}
+
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex; /* Added to create a horizontal layout */
+}
+
+.navbar ul li {
+  display: inline;
+  margin-right: 10px; /* Added to create spacing between the links */
+}
+
+.navbar ul li:last-child {
+  margin-right: 0; /* Remove margin from the last li element */
+}
+
+.navbar ul li a {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: black;
+}
+
+.navbar ul li a:hover {
+  background-color: lightgray;
+}
+
+.site-name {
+    color: black; /* Change the text color */
+    font-weight: bold; /* Apply bold font weight */
+    margin:auto; /* Center the site name horizontally */
+    text-align: center; /* Center the text within the site name */
+    font-size: 20px; /* Adjust the font size */
+    flex:1;
+    font-family:"Georgia", serif; /* Apply a different font style */
+}
+.site-name i {
+  margin-right: 5px; /* Add spacing between the icon and text */
+}
+
+
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px; /* Adjust the top margin to create space between navbar and form */
+  margin-bottom:50px;
+}
+
+form {
+  width: 500px;
+  margin: 0 auto; /* Add this line to center the form horizontally */
+  padding: 10px;
+  background-color: #f2f2f2;
+  border-radius: 5px;
+}
+
+form div {
+  margin-bottom: 10px;
+}
+
+label {
+  display: inline-block;
+  width: 120px;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="date"],
+select {
+  width: 200px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button[type="submit"] {
+  display: block;
+  margin: 0 auto;
+  padding: 10px 20px;
+  background-color: #73c3cb;
+  border: none;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.links {
+  display: flex;
+  justify-content: space-between;
+  width: 500px;
+  color:lightblue;
+  margin-top: 20px;
+}
+
+.links a {
+  text-decoration: none;
+  color: #73c3cb;
+}
+
+/*footer*/
+.footer {
+  background-color: lightblue;
+  padding: 5px;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.footer-content {
+  margin-top: 10px;
+}
+
+.footer p {
+  margin: 0;
+}
+

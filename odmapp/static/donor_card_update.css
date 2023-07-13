@@ -1,0 +1,129 @@
+/* Navbar Styles */
+.navbar {
+  background-color: lightblue;
+}
+
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.navbar ul li {
+  display: inline;
+  margin-right: 10px;
+}
+
+.navbar ul li:last-child {
+  margin-right: 0;
+}
+
+.navbar ul li a {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: black;
+}
+
+.navbar ul li a:hover {
+  background-color: lightgray;
+}
+
+.site-name {
+    color: black; /* Change the text color */
+    font-weight: bold; /* Apply bold font weight */
+    margin:auto; /* Center the site name horizontally */
+    text-align: center; /* Center the text within the site name */
+    font-size: 20px; /* Adjust the font size */
+    flex:1;
+    font-family:"Georgia", serif; /* Apply a different font style */
+}
+.site-name i {
+  margin-right: 5px; /* Add spacing between the icon and text */
+}
+
+
+/* Form Styles */
+.form-container {
+  max-width: 500px;
+  margin: auto;
+  padding: 20px;
+  background-color: white;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.form-container h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.form-container label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.form-container input[type="text"],
+.form-container input[type="number"],
+.form-container input[type="email"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.form-container .btn-primary {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: lightblue;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.form-container .btn-primary:hover {
+  background-color: lightgray;
+}
+
+.form-container a {
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+  text-decoration: none;
+  color: black;
+}
+
+.form-container a:hover {
+  text-decoration: underline;
+}
+
+
+
+
+
+
+/* Footer Styles */
+.footer {
+  background-color: lightblue;
+  padding: 5px;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.footer-content {
+  margin-top: 10px;
+}
+
+.footer p {
+  margin: 0;
+}

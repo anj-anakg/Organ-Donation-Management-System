@@ -1,0 +1,28 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="">
+    <title>Main</title>
+</head>
+<body>
+<!--navbar-->
+<nav class="navbar">
+    <ul>
+        <li><a class="btn btn-outline" href="{% url 'home' %}">Home</a></li>
+        <li><a>About Us </a></li>
+        <li><a href="{% url 'contact' %}">Contact Us</a></li>
+        <li><a href="{% url 'faq' %}">FAQ's</a></li>
+        <li class="site-name"><i class="fa-regular fa-heart-pulse"></i> Jeevana</li>
+        {% if user.is_authenticated %}
+        <li><a class="btn btn-outline" href="{% url 'logout' %}">LogOut</a></li>
+        {% else %}
+        <li><a class="btn btn-outline" href="{% url 'login' %}">Login</a></li>
+        <li><a class="btn btn-outline" href="{% url 'register' %}">Register</a></li>
+        {% endif %}
+    </ul>
+</nav>
+
+
+<P>Thank You For Registering !! Please Login to continue ...</P>
+</body>
+</html>

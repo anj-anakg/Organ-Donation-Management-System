@@ -1,0 +1,84 @@
+/* Navbar Styles */
+.navbar {
+  background-color: lightblue;
+}
+
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex; /* Added to create a horizontal layout */
+}
+
+.navbar ul li {
+  display: inline;
+  margin-right: 10px; /* Added to create spacing between the links */
+}
+
+.navbar ul li:last-child {
+  margin-right: 0; /* Remove margin from the last li element */
+}
+
+.navbar ul li a {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: black;
+}
+
+.navbar ul li a:hover {
+  background-color: lightgray;
+}
+
+/* Container Styles */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Align the container to start below the navbar */
+  height: 100vh;
+  padding-top: 50px; /* Adjust the top padding to create space between the navbar and the container */
+  box-sizing: border-box; /* Include padding in the total height calculation */
+  background-color: #f9f9f9;
+}
+
+/* Donor Card Styles */
+.donor-card {
+  max-width: 600px; /* Increase the max-width of the donor card */
+  margin-top: 20px; /* Add margin to create space between the container and the donor card */
+  padding: 20px;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.donor-card form {
+  margin-top: 20px;
+}
+
+.donor-card label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.donor-card input,
+.donor-card select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid lightgray;
+  border-radius: 3px;
+  margin-bottom: 10px;
+}
+
+.donor-card button {
+  width: 100%;
+  padding: 10px;
+  background-color: lightblue;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.donor-card button:hover {
+  background-color: lightgray;
+}
